@@ -1,10 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 50% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -13,17 +14,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 215 100% 50%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 172 75% 40%;
+    --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 262 100% 62%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -35,19 +36,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -97,5 +91,51 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-insscrub-500 to-insscrub-600;
+  }
+  
+  .bg-gradient-secondary {
+    @apply bg-gradient-to-r from-teal-500 to-teal-600;
+  }
+  
+  .bg-gradient-accent {
+    @apply bg-gradient-to-r from-purple-500 to-purple-600;
+  }
+  
+  .bg-gradient-mixed {
+    @apply bg-gradient-to-br from-insscrub-500 via-teal-500 to-purple-500;
+  }
+  
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-insscrub-600 to-insscrub-500 inline-block text-transparent bg-clip-text;
+  }
+  
+  .text-gradient-secondary {
+    @apply bg-gradient-to-r from-teal-600 to-teal-500 inline-block text-transparent bg-clip-text;
+  }
+  
+  .text-gradient-accent {
+    @apply bg-gradient-to-r from-purple-600 to-purple-500 inline-block text-transparent bg-clip-text;
+  }
+  
+  .text-gradient-mixed {
+    @apply bg-gradient-to-r from-insscrub-600 via-teal-600 to-purple-600 inline-block text-transparent bg-clip-text;
+  }
+  
+  .shadow-card {
+    @apply shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+  
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+  
+  .animate-on-scroll.in-view {
+    @apply opacity-100 translate-y-0;
   }
 }
