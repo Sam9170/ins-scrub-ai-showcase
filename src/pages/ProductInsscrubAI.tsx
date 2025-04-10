@@ -10,7 +10,6 @@ import StatsCard from '@/components/StatsCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import WavePattern from '@/components/icons/WavePattern';
 import CirclePattern from '@/components/icons/CirclePattern';
-import { Card, CardContent } from '@/components/ui/card';
 
 const ProductInsscrubAI = () => {
   return (
@@ -24,48 +23,18 @@ const ProductInsscrubAI = () => {
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-12 md:mb-0">
               <AnimatedElement>
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-insscrub-100 text-insscrub-700 text-sm font-medium mb-5 border border-insscrub-200 shadow-sm">
-                  <Bot size={16} className="mr-2 animate-pulse" />
-                  <span>Healthcare AI Solution</span>
-                </div>
-                <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                  <span className="relative">
-                    <span className="relative z-10">InsScrub</span>
-                    <span className="absolute bottom-0 left-0 right-0 h-3 bg-insscrub-200 rounded-lg -z-0 transform -rotate-1"></span>
-                  </span>{' '}
-                  <span className="text-gradient-primary">AI</span>
+                <span className="inline-block px-3 py-1 rounded-full bg-insscrub-100 text-insscrub-700 text-sm font-medium mb-5">
+                  InsScrub AI
+                </span>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                  Intelligent Automation for Healthcare <span className="text-gradient-primary">Revenue Cycle</span>
                 </h1>
                 <p className="text-lg text-gray-600 mb-8 max-w-lg">
                   Our comprehensive set of agentic AI systems seamlessly integrates into your existing workflows, automating billing and revenue processes to enhance financial performance.
                 </p>
-                
-                <div className="flex flex-wrap gap-4 mb-8">
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600 mr-2">
-                      <Check size={16} />
-                    </div>
-                    <span className="text-gray-700">HIPAA Compliant</span>
-                  </div>
-                  
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 mr-2">
-                      <Check size={16} />
-                    </div>
-                    <span className="text-gray-700">AI Powered</span>
-                  </div>
-                  
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 text-purple-600 mr-2">
-                      <Check size={16} />
-                    </div>
-                    <span className="text-gray-700">EHR Compatible</span>
-                  </div>
-                </div>
-                
                 <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                  <Button className="bg-gradient-primary hover:opacity-90 transition-opacity text-lg px-8 py-6 relative overflow-hidden group">
-                    <span className="relative z-10">Schedule Demo</span>
-                    <span className="absolute inset-0 h-full w-0 bg-white/20 transition-all duration-300 group-hover:w-full"></span>
+                  <Button className="bg-gradient-primary hover:opacity-90 transition-opacity text-lg px-8 py-6">
+                    Schedule Demo
                   </Button>
                   <Button variant="outline" className="border-insscrub-500 text-insscrub-600 hover:bg-insscrub-50 text-lg px-8 py-6">
                     View Case Studies
@@ -76,78 +45,47 @@ const ProductInsscrubAI = () => {
             <div className="md:w-1/2">
               <AnimatedElement animationType="fade-right">
                 <div className="relative">
-                  <Card className="max-w-md mx-auto overflow-hidden shadow-2xl border-insscrub-200 relative z-10">
-                    <CardContent className="p-0">
-                      <div className="flex items-center bg-gray-50 px-6 py-4 border-b border-gray-100">
-                        <div className="w-3 h-3 bg-red-400 rounded-full mr-2"></div>
-                        <div className="w-3 h-3 bg-yellow-400 rounded-full mr-2"></div>
-                        <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                        <div className="ml-auto flex items-center">
+                  <div className="bg-white rounded-xl shadow-xl p-6 border border-gray-100 max-w-md mx-auto">
+                    <div className="flex mb-6">
+                      <div className="w-3 h-3 bg-red-400 rounded-full mr-2"></div>
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full mr-2"></div>
+                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="bg-insscrub-50 p-3 rounded-lg border-l-4 border-insscrub-500 animate-pulse-slow">
+                        <div className="flex items-center mb-2">
                           <Bot size={18} className="text-insscrub-600 mr-2" />
                           <span className="font-semibold text-insscrub-700">InsScrub AI Assistant</span>
                         </div>
+                        <p className="text-sm text-gray-700">Analyzing patient insurance verification...</p>
                       </div>
-                      
-                      <div className="p-6 space-y-4">
-                        <div className="bg-insscrub-50 p-4 rounded-lg border-l-4 border-insscrub-500 animate-pulse-slow">
-                          <p className="text-sm text-gray-700 font-mono">
-                            <span className="text-insscrub-600 font-semibold">&gt; </span>
-                            Analyzing patient insurance verification...
-                          </p>
-                        </div>
-                        
-                        <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
-                          <h4 className="font-medium text-gray-900 mb-2">Patient Information</h4>
-                          <div className="grid grid-cols-2 gap-2 text-sm">
-                            <div>
-                              <span className="text-gray-500">Name:</span>
-                              <span className="ml-2 font-medium">John Smith</span>
-                            </div>
-                            <div>
-                              <span className="text-gray-500">DOB:</span>
-                              <span className="ml-2 font-medium">04/15/1985</span>
-                            </div>
-                            <div>
-                              <span className="text-gray-500">Insurance:</span>
-                              <span className="ml-2 font-medium">Blue Cross PPO</span>
-                            </div>
-                            <div>
-                              <span className="text-gray-500">Status:</span>
-                              <span className="ml-2 font-medium text-green-600">Verified</span>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <div className="bg-insscrub-50 p-4 rounded-lg border-l-4 border-insscrub-500">
-                          <p className="text-sm text-gray-700 font-mono mb-2">
-                            <span className="text-insscrub-600 font-semibold">&gt; </span>
-                            Verification complete. Results:
-                          </p>
-                          <div className="pl-5 space-y-1 text-sm">
-                            <p className="font-mono">Coverage: <span className="text-green-600">Active</span></p>
-                            <p className="font-mono">Deductible remaining: <span className="font-semibold">$350</span></p>
-                            <p className="font-mono">Co-pay for visit: <span className="font-semibold">$25</span></p>
-                            <p className="font-mono">Status: <span className="text-blue-600">In-network</span></p>
-                          </div>
-                        </div>
-                        
-                        <div className="pt-2">
-                          <div className="flex items-center justify-between mb-1">
-                            <span className="text-xs text-gray-500">Processing claims data...</span>
-                            <span className="text-xs font-medium text-insscrub-600">75%</span>
-                          </div>
-                          <div className="w-full h-2 bg-insscrub-100 rounded-full overflow-hidden">
-                            <div className="h-full w-3/4 bg-insscrub-500 animate-pulse-slow"></div>
-                          </div>
-                        </div>
+                      <div className="bg-gray-50 p-3 rounded-lg">
+                        <p className="text-sm text-gray-700">Patient: <span className="font-medium">John Smith</span></p>
+                        <p className="text-sm text-gray-700">Insurance: <span className="font-medium">Blue Cross PPO</span></p>
+                        <p className="text-sm text-gray-700">Status: <span className="font-medium text-green-600">Verified</span></p>
                       </div>
-                    </CardContent>
-                  </Card>
-                  
-                  {/* Decorative elements */}
-                  <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-teal-500 rounded-xl opacity-20 animate-rotate-slow"></div>
-                  <div className="absolute -top-8 -left-8 w-20 h-20 bg-purple-500 rounded-full opacity-20 animate-float"></div>
-                  <div className="absolute top-1/2 -right-4 w-8 h-8 bg-yellow-400 rounded-full opacity-30 animate-ping-slow"></div>
+                      <div className="bg-insscrub-50 p-3 rounded-lg border-l-4 border-insscrub-500">
+                        <div className="flex items-center mb-2">
+                          <Bot size={18} className="text-insscrub-600 mr-2" />
+                          <span className="font-semibold text-insscrub-700">InsScrub AI Assistant</span>
+                        </div>
+                        <p className="text-sm text-gray-700">
+                          Verification complete. Coverage active. <br />
+                          Deductible remaining: $350 <br />
+                          Co-pay for visit type: $25 <br />
+                          Status: In-network
+                        </p>
+                      </div>
+                      <div className="pt-2">
+                        <div className="w-full h-2 bg-insscrub-100 rounded-full overflow-hidden">
+                          <div className="h-full w-3/4 bg-insscrub-500 animate-pulse-slow"></div>
+                        </div>
+                        <p className="text-xs text-gray-500 mt-1">Processing claims data...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute -bottom-5 -right-5 w-20 h-20 bg-teal-500 rounded-xl opacity-20 animate-rotate-slow"></div>
+                  <div className="absolute -top-5 -left-5 w-16 h-16 bg-purple-500 rounded-full opacity-20 animate-float"></div>
                 </div>
               </AnimatedElement>
             </div>
