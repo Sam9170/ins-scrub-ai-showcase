@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 interface AnimatedElementProps {
   children: React.ReactNode;
   className?: string;
-  animationType?: 'fade-up' | 'fade-right' | 'zoom-in' | 'none';
+  animationType?: 'fade-up' | 'fade-right' | 'fade-left' | 'zoom-in' | 'none';
   delay?: number;
 }
 
@@ -54,6 +54,11 @@ const AnimatedElement = ({
       return isVisible
         ? 'opacity-100 translate-x-0'
         : 'opacity-0 translate-x-10';
+    }
+    if (animationType === 'fade-left') {
+      return isVisible
+        ? 'opacity-100 translate-x-0'
+        : 'opacity-0 -translate-x-10';
     }
     if (animationType === 'zoom-in') {
       return isVisible
