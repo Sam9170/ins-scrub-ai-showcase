@@ -12,7 +12,7 @@ interface Testimonial {
   author: string;
   role: string;
   company: string;
-  avatar?: string;
+  image?: string;
 }
 
 interface TestimonialsSectionProps {
@@ -85,7 +85,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                     author={testimonial.author}
                     role={testimonial.role}
                     company={testimonial.company}
-                    avatar={testimonial.avatar}
+                    image={testimonial.image}
                     className="h-full"
                   />
                 </div>
