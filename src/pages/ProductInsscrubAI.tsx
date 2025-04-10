@@ -91,7 +91,7 @@ const ProductInsscrubAI = () => {
                       <div className="p-6 space-y-4">
                         <div className="bg-insscrub-50 p-4 rounded-lg border-l-4 border-insscrub-500 animate-pulse-slow">
                           <p className="text-sm text-gray-700 font-mono">
-                            <span className="text-insscrub-600 font-semibold">> </span>
+                            <span className="text-insscrub-600 font-semibold">&gt; </span>
                             Analyzing patient insurance verification...
                           </p>
                         </div>
@@ -120,7 +120,7 @@ const ProductInsscrubAI = () => {
                         
                         <div className="bg-insscrub-50 p-4 rounded-lg border-l-4 border-insscrub-500">
                           <p className="text-sm text-gray-700 font-mono mb-2">
-                            <span className="text-insscrub-600 font-semibold">> </span>
+                            <span className="text-insscrub-600 font-semibold">&gt; </span>
                             Verification complete. Results:
                           </p>
                           <div className="pl-5 space-y-1 text-sm">
