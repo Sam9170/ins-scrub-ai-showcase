@@ -1,6 +1,6 @@
 
-import React from 'react';
-import { ArrowRight, Check, FileText, ScanSearch, Image, BadgeCheck, AlertCircle, FileCheck, Database, BarChart3 } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Check, FileText, ScanSearch, Image, BadgeCheck, AlertCircle, FileCheck, Database, BarChart3, ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -11,6 +11,13 @@ import WavePattern from '@/components/icons/WavePattern';
 import CirclePattern from '@/components/icons/CirclePattern';
 
 const ProductHealthOCR = () => {
+  const [activeTab, setActiveTab] = useState("insurance");
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setExpandedFaq(expandedFaq === index ? null : index);
+  };
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -185,8 +192,225 @@ const ProductHealthOCR = () => {
         </div>
       </section>
       
+      {/* Interactive Demo Section - NEW */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <AnimatedElement className="max-w-2xl mx-auto text-center mb-16">
+            <span className="inline-block px-3 py-1 rounded-full bg-teal-100 text-teal-700 text-sm font-medium mb-5">
+              Interactive Demo
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              See HealthOCR in Action
+            </h2>
+            <p className="text-lg text-gray-600">
+              Explore how our OCR technology processes different document types with exceptional accuracy.
+            </p>
+          </AnimatedElement>
+          
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-1/3 bg-teal-500 p-6">
+                  <h3 className="text-xl font-bold text-white mb-6">Select Document Type</h3>
+                  <nav className="space-y-2">
+                    <button 
+                      onClick={() => setActiveTab("insurance")}
+                      className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${activeTab === "insurance" ? "bg-white text-teal-600 font-medium" : "text-white hover:bg-teal-600"}`}
+                    >
+                      Insurance Card
+                    </button>
+                    <button 
+                      onClick={() => setActiveTab("eob")}
+                      className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${activeTab === "eob" ? "bg-white text-teal-600 font-medium" : "text-white hover:bg-teal-600"}`}
+                    >
+                      Explanation of Benefits
+                    </button>
+                    <button 
+                      onClick={() => setActiveTab("referral")}
+                      className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${activeTab === "referral" ? "bg-white text-teal-600 font-medium" : "text-white hover:bg-teal-600"}`}
+                    >
+                      Referral Form
+                    </button>
+                  </nav>
+                </div>
+                <div className="md:w-2/3 p-6">
+                  {activeTab === "insurance" && (
+                    <div className="animate-fade-in">
+                      <h3 className="text-xl font-bold mb-4">Insurance Card Processing</h3>
+                      <p className="text-gray-600 mb-4">
+                        HealthOCR automatically extracts key information from insurance cards, including member info, group numbers, and coverage details.
+                      </p>
+                      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <div className="h-40 bg-teal-50 rounded-lg border border-teal-100 flex items-center justify-center mb-2">
+                              <div className="text-center">
+                                <Image size={32} className="mx-auto text-teal-300 mb-2" />
+                                <p className="text-xs text-teal-500">Insurance Card Image</p>
+                              </div>
+                            </div>
+                            <p className="text-xs text-center text-gray-500">Source Document</p>
+                          </div>
+                          <div>
+                            <div className="h-40 bg-white rounded-lg border border-teal-200 p-3 overflow-y-auto">
+                              <div className="space-y-2">
+                                <div>
+                                  <p className="text-xs text-teal-500">Member Name</p>
+                                  <p className="text-sm font-medium">John Smith</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-teal-500">ID Number</p>
+                                  <p className="text-sm font-medium">XYZ9876543</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-teal-500">Group Number</p>
+                                  <p className="text-sm font-medium">GP12345</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-teal-500">Plan Type</p>
+                                  <p className="text-sm font-medium">PPO</p>
+                                </div>
+                              </div>
+                            </div>
+                            <p className="text-xs text-center text-gray-500">Extracted Data</p>
+                          </div>
+                        </div>
+                        <div className="mt-4 flex justify-end">
+                          <Button size="sm" className="text-xs h-7 bg-teal-500 hover:bg-teal-600">Export Data</Button>
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-500">
+                        HealthOCR processes insurance cards in under 3 seconds with over 99% accuracy.
+                      </p>
+                    </div>
+                  )}
+                  
+                  {activeTab === "eob" && (
+                    <div className="animate-fade-in">
+                      <h3 className="text-xl font-bold mb-4">EOB Processing</h3>
+                      <p className="text-gray-600 mb-4">
+                        Automatically extract payment information, adjustment codes, and service details from complex EOB documents.
+                      </p>
+                      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <div className="h-48 bg-teal-50 rounded-lg border border-teal-100 flex items-center justify-center mb-2">
+                              <div className="text-center">
+                                <FileText size={32} className="mx-auto text-teal-300 mb-2" />
+                                <p className="text-xs text-teal-500">EOB Document</p>
+                              </div>
+                            </div>
+                            <p className="text-xs text-center text-gray-500">Source Document</p>
+                          </div>
+                          <div>
+                            <div className="h-48 bg-white rounded-lg border border-teal-200 p-3 overflow-y-auto">
+                              <div className="space-y-2">
+                                <div>
+                                  <p className="text-xs text-teal-500">Claim Number</p>
+                                  <p className="text-sm font-medium">CL987654321</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-teal-500">Service Date</p>
+                                  <p className="text-sm font-medium">06/15/2023</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-teal-500">Billed Amount</p>
+                                  <p className="text-sm font-medium">$450.00</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-teal-500">Allowed Amount</p>
+                                  <p className="text-sm font-medium">$325.50</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-teal-500">Patient Responsibility</p>
+                                  <p className="text-sm font-medium">$65.10</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-teal-500">Adjustment Code</p>
+                                  <p className="text-sm font-medium">CO-45</p>
+                                </div>
+                              </div>
+                            </div>
+                            <p className="text-xs text-center text-gray-500">Extracted Data</p>
+                          </div>
+                        </div>
+                        <div className="mt-4 flex justify-end">
+                          <Button size="sm" className="text-xs h-7 bg-teal-500 hover:bg-teal-600">Export Data</Button>
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-500">
+                        Process hundreds of EOBs daily with minimal manual intervention.
+                      </p>
+                    </div>
+                  )}
+                  
+                  {activeTab === "referral" && (
+                    <div className="animate-fade-in">
+                      <h3 className="text-xl font-bold mb-4">Referral Form Processing</h3>
+                      <p className="text-gray-600 mb-4">
+                        Digitize referral forms to quickly extract patient information, referring provider details, and clinical data.
+                      </p>
+                      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <div className="h-48 bg-teal-50 rounded-lg border border-teal-100 flex items-center justify-center mb-2">
+                              <div className="text-center">
+                                <FileText size={32} className="mx-auto text-teal-300 mb-2" />
+                                <p className="text-xs text-teal-500">Referral Form</p>
+                              </div>
+                            </div>
+                            <p className="text-xs text-center text-gray-500">Source Document</p>
+                          </div>
+                          <div>
+                            <div className="h-48 bg-white rounded-lg border border-teal-200 p-3 overflow-y-auto">
+                              <div className="space-y-2">
+                                <div>
+                                  <p className="text-xs text-teal-500">Patient Name</p>
+                                  <p className="text-sm font-medium">Emily Johnson</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-teal-500">DOB</p>
+                                  <p className="text-sm font-medium">09/22/1985</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-teal-500">Referring Provider</p>
+                                  <p className="text-sm font-medium">Dr. Michael Chen</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-teal-500">Referred To</p>
+                                  <p className="text-sm font-medium">Dr. Sarah Williams</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-teal-500">Reason for Referral</p>
+                                  <p className="text-sm font-medium">Orthopedic consultation</p>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-teal-500">Urgency</p>
+                                  <p className="text-sm font-medium">Routine</p>
+                                </div>
+                              </div>
+                            </div>
+                            <p className="text-xs text-center text-gray-500">Extracted Data</p>
+                          </div>
+                        </div>
+                        <div className="mt-4 flex justify-end">
+                          <Button size="sm" className="text-xs h-7 bg-teal-500 hover:bg-teal-600">Export Data</Button>
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-500">
+                        Reduce referral processing time by up to 85% while improving data accuracy.
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Use Cases Section */}
-      <section className="py-20 bg-gray-50 relative">
+      <section className="py-20 bg-white relative">
         <CirclePattern className="top-0 left-0 text-teal-100" />
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedElement className="max-w-2xl mx-auto text-center mb-16">
@@ -309,6 +533,87 @@ const ProductHealthOCR = () => {
                 </li>
               </ul>
             </AnimatedElement>
+          </div>
+        </div>
+      </section>
+      
+      {/* Comparison Section - NEW */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <AnimatedElement className="max-w-2xl mx-auto text-center mb-16">
+            <span className="inline-block px-3 py-1 rounded-full bg-teal-100 text-teal-700 text-sm font-medium mb-5">
+              Why Choose Us
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              HealthOCR vs. Traditional OCR
+            </h2>
+            <p className="text-lg text-gray-600">
+              See how our healthcare-specific OCR solution outperforms generic document processing technologies.
+            </p>
+          </AnimatedElement>
+          
+          <div className="max-w-4xl mx-auto overflow-hidden rounded-xl shadow-lg">
+            <div className="bg-teal-600 text-white py-6">
+              <div className="grid grid-cols-3 gap-4 px-6">
+                <div className="col-span-1"></div>
+                <div className="col-span-1 text-center font-bold">HealthOCR</div>
+                <div className="col-span-1 text-center font-bold">Generic OCR</div>
+              </div>
+            </div>
+            
+            <div className="bg-white">
+              <div className="grid grid-cols-3 gap-4 px-6 py-4 border-b border-gray-100">
+                <div className="col-span-1 font-medium">Healthcare-Specific Models</div>
+                <div className="col-span-1 text-center">
+                  <CheckCircle2 size={20} className="mx-auto text-teal-500" />
+                </div>
+                <div className="col-span-1 text-center text-gray-400">Limited</div>
+              </div>
+              
+              <div className="grid grid-cols-3 gap-4 px-6 py-4 border-b border-gray-100 bg-gray-50">
+                <div className="col-span-1 font-medium">Insurance Card Recognition</div>
+                <div className="col-span-1 text-center">
+                  <div className="bg-teal-100 text-teal-700 rounded-full px-2 py-1 text-xs font-medium inline-block">99.7% Accurate</div>
+                </div>
+                <div className="col-span-1 text-center">
+                  <div className="bg-gray-100 text-gray-700 rounded-full px-2 py-1 text-xs font-medium inline-block">85% Accurate</div>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-3 gap-4 px-6 py-4 border-b border-gray-100">
+                <div className="col-span-1 font-medium">EOB Processing Capability</div>
+                <div className="col-span-1 text-center">
+                  <CheckCircle2 size={20} className="mx-auto text-teal-500" />
+                </div>
+                <div className="col-span-1 text-center text-gray-400">Basic</div>
+              </div>
+              
+              <div className="grid grid-cols-3 gap-4 px-6 py-4 border-b border-gray-100 bg-gray-50">
+                <div className="col-span-1 font-medium">Integration with Healthcare Systems</div>
+                <div className="col-span-1 text-center">
+                  <div className="text-teal-600 font-medium">Pre-built connectors</div>
+                </div>
+                <div className="col-span-1 text-center text-gray-600">Custom development required</div>
+              </div>
+              
+              <div className="grid grid-cols-3 gap-4 px-6 py-4 border-b border-gray-100">
+                <div className="col-span-1 font-medium">HIPAA Compliance</div>
+                <div className="col-span-1 text-center">
+                  <CheckCircle2 size={20} className="mx-auto text-teal-500" />
+                </div>
+                <div className="col-span-1 text-center text-gray-400">Varies</div>
+              </div>
+              
+              <div className="grid grid-cols-3 gap-4 px-6 py-4 bg-gray-50">
+                <div className="col-span-1 font-medium">Healthcare Terminology Recognition</div>
+                <div className="col-span-1 text-center">
+                  <CheckCircle2 size={20} className="mx-auto text-teal-500" />
+                </div>
+                <div className="col-span-1 text-center">
+                  <div className="text-gray-400">Limited</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -481,8 +786,149 @@ const ProductHealthOCR = () => {
         </div>
       </section>
       
-      {/* CTA Section */}
+      {/* FAQ Section - NEW */}
       <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <AnimatedElement className="max-w-2xl mx-auto text-center mb-16">
+            <span className="inline-block px-3 py-1 rounded-full bg-teal-100 text-teal-700 text-sm font-medium mb-5">
+              FAQ
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600">
+              Get answers to common questions about HealthOCR and document processing.
+            </p>
+          </AnimatedElement>
+          
+          <div className="max-w-3xl mx-auto">
+            <div className="space-y-4">
+              <div 
+                className={`bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 ${expandedFaq === 0 ? 'shadow-md' : ''}`}
+              >
+                <button 
+                  className="w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none"
+                  onClick={() => toggleFaq(0)}
+                >
+                  <span className="font-medium text-lg">How long does it take to implement HealthOCR?</span>
+                  {expandedFaq === 0 ? 
+                    <ChevronUp className="text-teal-500" size={20} /> : 
+                    <ChevronDown className="text-gray-400" size={20} />
+                  }
+                </button>
+                <div 
+                  className={`px-6 overflow-hidden transition-all duration-300 ${
+                    expandedFaq === 0 ? 'max-h-96 pb-6' : 'max-h-0'
+                  }`}
+                >
+                  <p className="text-gray-600">
+                    Most implementations are completed within 2-4 weeks, depending on the complexity of your environment and the specific modules being deployed. Our implementation team works closely with your IT department to ensure a smooth integration with your existing systems.
+                  </p>
+                </div>
+              </div>
+              
+              <div 
+                className={`bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 ${expandedFaq === 1 ? 'shadow-md' : ''}`}
+              >
+                <button 
+                  className="w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none"
+                  onClick={() => toggleFaq(1)}
+                >
+                  <span className="font-medium text-lg">What types of documents can HealthOCR process?</span>
+                  {expandedFaq === 1 ? 
+                    <ChevronUp className="text-teal-500" size={20} /> : 
+                    <ChevronDown className="text-gray-400" size={20} />
+                  }
+                </button>
+                <div 
+                  className={`px-6 overflow-hidden transition-all duration-300 ${
+                    expandedFaq === 1 ? 'max-h-96 pb-6' : 'max-h-0'
+                  }`}
+                >
+                  <p className="text-gray-600">
+                    HealthOCR is designed to handle a wide range of healthcare documents, including insurance cards, EOBs, referrals, clinical notes, lab results, patient forms, and more. Our specialized OCR technology is trained on healthcare-specific documents to ensure high accuracy across different document types.
+                  </p>
+                </div>
+              </div>
+              
+              <div 
+                className={`bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 ${expandedFaq === 2 ? 'shadow-md' : ''}`}
+              >
+                <button 
+                  className="w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none"
+                  onClick={() => toggleFaq(2)}
+                >
+                  <span className="font-medium text-lg">Is HealthOCR HIPAA compliant?</span>
+                  {expandedFaq === 2 ? 
+                    <ChevronUp className="text-teal-500" size={20} /> : 
+                    <ChevronDown className="text-gray-400" size={20} />
+                  }
+                </button>
+                <div 
+                  className={`px-6 overflow-hidden transition-all duration-300 ${
+                    expandedFaq === 2 ? 'max-h-96 pb-6' : 'max-h-0'
+                  }`}
+                >
+                  <p className="text-gray-600">
+                    Yes, HealthOCR is fully HIPAA compliant. We implement robust security measures including encryption, access controls, audit logs, and secure data storage. We can also sign Business Associate Agreements (BAAs) with healthcare organizations to ensure compliance with privacy regulations.
+                  </p>
+                </div>
+              </div>
+              
+              <div 
+                className={`bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 ${expandedFaq === 3 ? 'shadow-md' : ''}`}
+              >
+                <button 
+                  className="w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none"
+                  onClick={() => toggleFaq(3)}
+                >
+                  <span className="font-medium text-lg">How does the pricing work?</span>
+                  {expandedFaq === 3 ? 
+                    <ChevronUp className="text-teal-500" size={20} /> : 
+                    <ChevronDown className="text-gray-400" size={20} />
+                  }
+                </button>
+                <div 
+                  className={`px-6 overflow-hidden transition-all duration-300 ${
+                    expandedFaq === 3 ? 'max-h-96 pb-6' : 'max-h-0'
+                  }`}
+                >
+                  <p className="text-gray-600">
+                    HealthOCR offers flexible pricing models based on your organization's specific needs. We provide both subscription-based pricing and volume-based pricing options. Most clients choose our subscription plan which includes a set number of monthly document scans with additional scans available at discounted rates. Contact our sales team for a customized quote.
+                  </p>
+                </div>
+              </div>
+              
+              <div 
+                className={`bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 ${expandedFaq === 4 ? 'shadow-md' : ''}`}
+              >
+                <button 
+                  className="w-full text-left px-6 py-4 flex justify-between items-center focus:outline-none"
+                  onClick={() => toggleFaq(4)}
+                >
+                  <span className="font-medium text-lg">Do you offer support and training?</span>
+                  {expandedFaq === 4 ? 
+                    <ChevronUp className="text-teal-500" size={20} /> : 
+                    <ChevronDown className="text-gray-400" size={20} />
+                  }
+                </button>
+                <div 
+                  className={`px-6 overflow-hidden transition-all duration-300 ${
+                    expandedFaq === 4 ? 'max-h-96 pb-6' : 'max-h-0'
+                  }`}
+                >
+                  <p className="text-gray-600">
+                    Yes, all HealthOCR plans include comprehensive training and ongoing support. Our implementation includes staff training sessions, detailed documentation, and access to our knowledge base. We also provide 24/7 technical support via email, phone, and chat to ensure any issues are resolved quickly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* CTA Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <AnimatedElement className="max-w-4xl mx-auto bg-gradient-to-br from-teal-500 to-teal-700 rounded-2xl p-8 md:p-12 text-white text-center relative overflow-hidden">
             <div className="relative z-10">

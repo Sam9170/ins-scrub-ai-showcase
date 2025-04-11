@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import ProductInsscrubAI from "./pages/ProductInsscrubAI";
 import ProductHealthOCR from "./pages/ProductHealthOCR";
 import ProductInfoMate from "./pages/ProductInfoMate";
+import ProductClaimProcessing from "./pages/ProductClaimProcessing";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/products/insscrub-ai" element={<ProductInsscrubAI />} />
             <Route path="/products/healthocr" element={<ProductHealthOCR />} />
             <Route path="/products/infomate" element={<ProductInfoMate />} />
+            <Route path="/products/claimflow-pro" element={<ProductClaimProcessing />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
