@@ -1,6 +1,34 @@
 
 import React, { useState } from 'react';
-import { ArrowRight, Check, BarChart3, PieChart, LineChart, TrendingUp, Activity, ArrowUpRight, AlertCircle, Gauge, Database, Server, Zap, Users, ArrowDownUp, GitBranch, Layers, GitFork, ChartPie, SearchCheck, Workflow } from 'lucide-react';
+import { 
+  ArrowRight, 
+  Check, 
+  BarChart3, 
+  PieChart, 
+  LineChart, 
+  TrendingUp, 
+  Activity, 
+  ArrowUpRight, 
+  AlertCircle, 
+  Gauge, 
+  Database, 
+  Server, 
+  Zap, 
+  Users, 
+  ArrowDownUp, 
+  GitBranch, 
+  Layers, 
+  GitFork, 
+  ChartPie, 
+  SearchCheck, 
+  Workflow,
+  CircleDollarSign,
+  Clock,
+  Shield,
+  Lock,
+  Key,
+  Eye
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Navbar from '@/components/Navbar';
