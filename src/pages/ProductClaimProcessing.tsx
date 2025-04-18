@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Check, FileCheck, Send, Clock, Shield, ChartBar, Zap, ClipboardCheck, CreditCard, CircleDollarSign, Filter, Search } from 'lucide-react';
+import { ArrowRight, Check, FileCheck, Send, Clock, Shield, ChartBar, Zap, ClipboardCheck, CreditCard, CircleDollarSign, Filter, Search, CircleCheck, BadgeCheck, TrendingUp, ShieldCheck, ScrollText, HeartHandshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -131,60 +131,60 @@ const ProductClaimProcessing = () => {
               Intelligent Claim Processing
             </h2>
             <p className="text-lg text-gray-600">
-              ClaimFlow Pro offers advanced tools and automation to streamline every step of the claim lifecycle from creation to payment.
+              ClaimFlow Pro transforms your claim processing workflow with cutting-edge AI technology, ensuring faster submissions and higher approval rates.
             </p>
           </AnimatedElement>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <FeatureCard
-              icon={<ClipboardCheck size={24} />}
-              title="Smart Claim Scrubbing"
-              description="AI-powered validation identifies potential errors and compliance issues before submission, reducing denials by up to 35%."
+              icon={<BadgeCheck size={24} />}
+              title="Advanced Claim Validation"
+              description="AI-powered validation system checks 200+ rules in real-time, reducing denials by up to 35% and ensuring first-pass acceptance."
               iconClassName="bg-orange-100 text-orange-600"
               delay={100}
               className="transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]"
             />
             
             <FeatureCard
-              icon={<Send size={24} />}
-              title="Batch Submission"
-              description="Efficiently submit multiple claims to different payers simultaneously with automated formatting for each payer's requirements."
+              icon={<TrendingUp size={24} />}
+              title="Revenue Optimization"
+              description="Smart analytics identify underpayments and optimization opportunities, helping increase revenue by an average of 12% per claim."
               iconClassName="bg-orange-100 text-orange-600"
               delay={200}
               className="transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]"
             />
             
             <FeatureCard
-              icon={<Clock size={24} />}
-              title="Real-time Tracking"
-              description="Monitor claim status in real-time with automatic updates and alerts when action is required."
+              icon={<ShieldCheck size={24} />}
+              title="Compliance Assurance"
+              description="Stay compliant with automatic updates to payer rules and regulations, reducing compliance-related denials by 45%."
               iconClassName="bg-orange-100 text-orange-600"
               delay={300}
               className="transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]"
             />
             
             <FeatureCard
-              icon={<Shield size={24} />}
-              title="Compliance Assurance"
-              description="Stay compliant with ever-changing regulations through automatic updates and built-in compliance checks."
+              icon={<ScrollText size={24} />}
+              title="Smart Documentation"
+              description="Automated documentation review ensures all required attachments are included and properly formatted before submission."
               iconClassName="bg-orange-100 text-orange-600"
               delay={400}
               className="transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]"
             />
             
             <FeatureCard
-              icon={<CircleDollarSign size={24} />}
-              title="Revenue Recovery"
-              description="Identify underpaid and denied claims with intelligent analysis tools that help maximize reimbursements."
+              icon={<HeartHandshake size={24} />}
+              title="Payer Relations"
+              description="Direct connectivity to 1000+ payers with automated follow-up workflows and relationship management tools."
               iconClassName="bg-orange-100 text-orange-600"
               delay={500}
               className="transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]"
             />
             
             <FeatureCard
-              icon={<Filter size={24} />}
-              title="Custom Workflows"
-              description="Configure claim processing workflows to match your organization's specific needs and requirements."
+              icon={<Zap size={24} />}
+              title="Lightning Fast Processing"
+              description="Process claims 5x faster with automated batch submissions and real-time status tracking across multiple payers."
               iconClassName="bg-orange-100 text-orange-600"
               delay={600}
               className="transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]"
@@ -330,38 +330,38 @@ const ProductClaimProcessing = () => {
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedElement className="max-w-2xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Results That Matter
+              Proven Results
             </h2>
             <p className="text-lg opacity-90">
-              Our clients experience significant improvements in their claim processing metrics.
+              Join thousands of healthcare providers who have transformed their revenue cycle with ClaimFlow Pro.
             </p>
           </AnimatedElement>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <StatsCard
-              value="93%"
-              label="First-pass acceptance rate"
+              value="98.5%"
+              label="Clean claim submission rate"
               className="bg-white/10 backdrop-blur-sm text-white border-none transition-all duration-300 hover:bg-white/20"
               delay={100}
             />
             
             <StatsCard
-              value="68%"
-              label="Reduction in claim denials"
+              value="75%"
+              label="Reduction in processing time"
               className="bg-white/10 backdrop-blur-sm text-white border-none transition-all duration-300 hover:bg-white/20"
               delay={200}
             />
             
             <StatsCard
-              value="5x"
-              label="Faster submission process"
+              value="$2.1M"
+              label="Average annual savings"
               className="bg-white/10 backdrop-blur-sm text-white border-none transition-all duration-300 hover:bg-white/20"
               delay={300}
             />
             
             <StatsCard
-              value="$1.5M"
-              label="Average annual savings"
+              value="99.9%"
+              label="System uptime"
               className="bg-white/10 backdrop-blur-sm text-white border-none transition-all duration-300 hover:bg-white/20"
               delay={400}
             />
