@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import { ArrowRight, Check, FileText, ScanSearch, Image, BadgeCheck, AlertCircle, FileCheck, Database, BarChart3, ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
@@ -9,6 +8,7 @@ import FeatureCard from '@/components/FeatureCard';
 import StatsCard from '@/components/StatsCard';
 import WavePattern from '@/components/icons/WavePattern';
 import CirclePattern from '@/components/icons/CirclePattern';
+import OCRProcessingDemo from '@/components/ocr/OCRProcessingDemo';
 
 const ProductHealthOCR = () => {
   const [activeTab, setActiveTab] = useState("insurance");
@@ -192,220 +192,22 @@ const ProductHealthOCR = () => {
         </div>
       </section>
       
-      {/* Interactive Demo Section - NEW */}
-      <section className="py-20 bg-gray-50">
+      {/* Interactive Demo Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-blue-100">
         <div className="container mx-auto px-4">
           <AnimatedElement className="max-w-2xl mx-auto text-center mb-16">
-            <span className="inline-block px-3 py-1 rounded-full bg-teal-100 text-teal-700 text-sm font-medium mb-5">
-              Interactive Demo
+            <span className="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-5">
+              Live Demo
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              See HealthOCR in Action
+              Experience Intelligent Document Processing
             </h2>
             <p className="text-lg text-gray-600">
-              Explore how our OCR technology processes different document types with exceptional accuracy.
+              Watch as HealthOCR instantly extracts and processes information from medical documents with high accuracy.
             </p>
           </AnimatedElement>
           
-          <div className="max-w-5xl mx-auto">
-            <div className="bg-white rounded-xl shadow-md overflow-hidden">
-              <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/3 bg-teal-500 p-6">
-                  <h3 className="text-xl font-bold text-white mb-6">Select Document Type</h3>
-                  <nav className="space-y-2">
-                    <button 
-                      onClick={() => setActiveTab("insurance")}
-                      className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${activeTab === "insurance" ? "bg-white text-teal-600 font-medium" : "text-white hover:bg-teal-600"}`}
-                    >
-                      Insurance Card
-                    </button>
-                    <button 
-                      onClick={() => setActiveTab("eob")}
-                      className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${activeTab === "eob" ? "bg-white text-teal-600 font-medium" : "text-white hover:bg-teal-600"}`}
-                    >
-                      Explanation of Benefits
-                    </button>
-                    <button 
-                      onClick={() => setActiveTab("referral")}
-                      className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${activeTab === "referral" ? "bg-white text-teal-600 font-medium" : "text-white hover:bg-teal-600"}`}
-                    >
-                      Referral Form
-                    </button>
-                  </nav>
-                </div>
-                <div className="md:w-2/3 p-6">
-                  {activeTab === "insurance" && (
-                    <div className="animate-fade-in">
-                      <h3 className="text-xl font-bold mb-4">Insurance Card Processing</h3>
-                      <p className="text-gray-600 mb-4">
-                        HealthOCR automatically extracts key information from insurance cards, including member info, group numbers, and coverage details.
-                      </p>
-                      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
-                        <div className="grid grid-cols-2 gap-4">
-                          <div>
-                            <div className="h-40 bg-teal-50 rounded-lg border border-teal-100 flex items-center justify-center mb-2">
-                              <div className="text-center">
-                                <Image size={32} className="mx-auto text-teal-300 mb-2" />
-                                <p className="text-xs text-teal-500">Insurance Card Image</p>
-                              </div>
-                            </div>
-                            <p className="text-xs text-center text-gray-500">Source Document</p>
-                          </div>
-                          <div>
-                            <div className="h-40 bg-white rounded-lg border border-teal-200 p-3 overflow-y-auto">
-                              <div className="space-y-2">
-                                <div>
-                                  <p className="text-xs text-teal-500">Member Name</p>
-                                  <p className="text-sm font-medium">John Smith</p>
-                                </div>
-                                <div>
-                                  <p className="text-xs text-teal-500">ID Number</p>
-                                  <p className="text-sm font-medium">XYZ9876543</p>
-                                </div>
-                                <div>
-                                  <p className="text-xs text-teal-500">Group Number</p>
-                                  <p className="text-sm font-medium">GP12345</p>
-                                </div>
-                                <div>
-                                  <p className="text-xs text-teal-500">Plan Type</p>
-                                  <p className="text-sm font-medium">PPO</p>
-                                </div>
-                              </div>
-                            </div>
-                            <p className="text-xs text-center text-gray-500">Extracted Data</p>
-                          </div>
-                        </div>
-                        <div className="mt-4 flex justify-end">
-                          <Button size="sm" className="text-xs h-7 bg-teal-500 hover:bg-teal-600">Export Data</Button>
-                        </div>
-                      </div>
-                      <p className="text-sm text-gray-500">
-                        HealthOCR processes insurance cards in under 3 seconds with over 99% accuracy.
-                      </p>
-                    </div>
-                  )}
-                  
-                  {activeTab === "eob" && (
-                    <div className="animate-fade-in">
-                      <h3 className="text-xl font-bold mb-4">EOB Processing</h3>
-                      <p className="text-gray-600 mb-4">
-                        Automatically extract payment information, adjustment codes, and service details from complex EOB documents.
-                      </p>
-                      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
-                        <div className="grid grid-cols-2 gap-4">
-                          <div>
-                            <div className="h-48 bg-teal-50 rounded-lg border border-teal-100 flex items-center justify-center mb-2">
-                              <div className="text-center">
-                                <FileText size={32} className="mx-auto text-teal-300 mb-2" />
-                                <p className="text-xs text-teal-500">EOB Document</p>
-                              </div>
-                            </div>
-                            <p className="text-xs text-center text-gray-500">Source Document</p>
-                          </div>
-                          <div>
-                            <div className="h-48 bg-white rounded-lg border border-teal-200 p-3 overflow-y-auto">
-                              <div className="space-y-2">
-                                <div>
-                                  <p className="text-xs text-teal-500">Claim Number</p>
-                                  <p className="text-sm font-medium">CL987654321</p>
-                                </div>
-                                <div>
-                                  <p className="text-xs text-teal-500">Service Date</p>
-                                  <p className="text-sm font-medium">06/15/2023</p>
-                                </div>
-                                <div>
-                                  <p className="text-xs text-teal-500">Billed Amount</p>
-                                  <p className="text-sm font-medium">$450.00</p>
-                                </div>
-                                <div>
-                                  <p className="text-xs text-teal-500">Allowed Amount</p>
-                                  <p className="text-sm font-medium">$325.50</p>
-                                </div>
-                                <div>
-                                  <p className="text-xs text-teal-500">Patient Responsibility</p>
-                                  <p className="text-sm font-medium">$65.10</p>
-                                </div>
-                                <div>
-                                  <p className="text-xs text-teal-500">Adjustment Code</p>
-                                  <p className="text-sm font-medium">CO-45</p>
-                                </div>
-                              </div>
-                            </div>
-                            <p className="text-xs text-center text-gray-500">Extracted Data</p>
-                          </div>
-                        </div>
-                        <div className="mt-4 flex justify-end">
-                          <Button size="sm" className="text-xs h-7 bg-teal-500 hover:bg-teal-600">Export Data</Button>
-                        </div>
-                      </div>
-                      <p className="text-sm text-gray-500">
-                        Process hundreds of EOBs daily with minimal manual intervention.
-                      </p>
-                    </div>
-                  )}
-                  
-                  {activeTab === "referral" && (
-                    <div className="animate-fade-in">
-                      <h3 className="text-xl font-bold mb-4">Referral Form Processing</h3>
-                      <p className="text-gray-600 mb-4">
-                        Digitize referral forms to quickly extract patient information, referring provider details, and clinical data.
-                      </p>
-                      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
-                        <div className="grid grid-cols-2 gap-4">
-                          <div>
-                            <div className="h-48 bg-teal-50 rounded-lg border border-teal-100 flex items-center justify-center mb-2">
-                              <div className="text-center">
-                                <FileText size={32} className="mx-auto text-teal-300 mb-2" />
-                                <p className="text-xs text-teal-500">Referral Form</p>
-                              </div>
-                            </div>
-                            <p className="text-xs text-center text-gray-500">Source Document</p>
-                          </div>
-                          <div>
-                            <div className="h-48 bg-white rounded-lg border border-teal-200 p-3 overflow-y-auto">
-                              <div className="space-y-2">
-                                <div>
-                                  <p className="text-xs text-teal-500">Patient Name</p>
-                                  <p className="text-sm font-medium">Emily Johnson</p>
-                                </div>
-                                <div>
-                                  <p className="text-xs text-teal-500">DOB</p>
-                                  <p className="text-sm font-medium">09/22/1985</p>
-                                </div>
-                                <div>
-                                  <p className="text-xs text-teal-500">Referring Provider</p>
-                                  <p className="text-sm font-medium">Dr. Michael Chen</p>
-                                </div>
-                                <div>
-                                  <p className="text-xs text-teal-500">Referred To</p>
-                                  <p className="text-sm font-medium">Dr. Sarah Williams</p>
-                                </div>
-                                <div>
-                                  <p className="text-xs text-teal-500">Reason for Referral</p>
-                                  <p className="text-sm font-medium">Orthopedic consultation</p>
-                                </div>
-                                <div>
-                                  <p className="text-xs text-teal-500">Urgency</p>
-                                  <p className="text-sm font-medium">Routine</p>
-                                </div>
-                              </div>
-                            </div>
-                            <p className="text-xs text-center text-gray-500">Extracted Data</p>
-                          </div>
-                        </div>
-                        <div className="mt-4 flex justify-end">
-                          <Button size="sm" className="text-xs h-7 bg-teal-500 hover:bg-teal-600">Export Data</Button>
-                        </div>
-                      </div>
-                      <p className="text-sm text-gray-500">
-                        Reduce referral processing time by up to 85% while improving data accuracy.
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
+          <OCRProcessingDemo />
         </div>
       </section>
       
@@ -537,7 +339,7 @@ const ProductHealthOCR = () => {
         </div>
       </section>
       
-      {/* Comparison Section - NEW */}
+      {/* Comparison Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <AnimatedElement className="max-w-2xl mx-auto text-center mb-16">
@@ -786,7 +588,7 @@ const ProductHealthOCR = () => {
         </div>
       </section>
       
-      {/* FAQ Section - NEW */}
+      {/* FAQ Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <AnimatedElement className="max-w-2xl mx-auto text-center mb-16">

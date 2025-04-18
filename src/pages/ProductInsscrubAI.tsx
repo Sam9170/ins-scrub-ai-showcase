@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight, Check, Calendar, Zap, Bot, Shield, Clock, Braces, CircleDollarSign, CheckCheck, LineChart, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -10,6 +9,7 @@ import StatsCard from '@/components/StatsCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import WavePattern from '@/components/icons/WavePattern';
 import CirclePattern from '@/components/icons/CirclePattern';
+import EligibilityCheckDemo from '@/components/eligibility/EligibilityCheckDemo';
 
 const ProductInsscrubAI = () => {
   return (
@@ -92,6 +92,25 @@ const ProductInsscrubAI = () => {
           </div>
         </div>
         <WavePattern className="text-white" />
+      </section>
+      
+      {/* Interactive Demo Section */}
+      <section className="py-20 bg-gradient-to-br from-insscrub-50 to-insscrub-100">
+        <div className="container mx-auto px-4">
+          <AnimatedElement className="max-w-2xl mx-auto text-center mb-16">
+            <span className="inline-block px-3 py-1 rounded-full bg-insscrub-100 text-insscrub-700 text-sm font-medium mb-5">
+              Live Demo
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Experience Real-Time Eligibility Verification
+            </h2>
+            <p className="text-lg text-gray-600">
+              See how InsScrub AI streamlines insurance verification with intelligent automation and real-time updates.
+            </p>
+          </AnimatedElement>
+          
+          <EligibilityCheckDemo />
+        </div>
       </section>
       
       {/* Features Section */}
