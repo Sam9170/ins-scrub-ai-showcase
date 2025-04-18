@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight, Check, FileCheck, Send, Clock, Shield, ChartBar, Zap, ClipboardCheck, CreditCard, CircleDollarSign, Filter, Search, CircleCheck, BadgeCheck, TrendingUp, ShieldCheck, ScrollText, HeartHandshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,6 +8,7 @@ import FeatureCard from '@/components/FeatureCard';
 import StatsCard from '@/components/StatsCard';
 import WavePattern from '@/components/icons/WavePattern';
 import CirclePattern from '@/components/icons/CirclePattern';
+import ClaimSubmissionDemo from '@/components/claim/ClaimSubmissionDemo';
 
 const ProductClaimProcessing = () => {
   return (
@@ -190,6 +190,25 @@ const ProductClaimProcessing = () => {
               className="transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]"
             />
           </div>
+        </div>
+      </section>
+      
+      {/* Demo Section */}
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-orange-100">
+        <div className="container mx-auto px-4">
+          <AnimatedElement className="max-w-2xl mx-auto text-center mb-16">
+            <span className="inline-block px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-5">
+              Interactive Demo
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Experience Our Streamlined Process
+            </h2>
+            <p className="text-lg text-gray-600">
+              See how easy it is to submit claims with our intuitive interface. Follow along with our interactive demo to understand the simple steps involved.
+            </p>
+          </AnimatedElement>
+          
+          <ClaimSubmissionDemo />
         </div>
       </section>
       
