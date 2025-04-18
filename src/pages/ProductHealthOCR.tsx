@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { ArrowRight, Check, FileText, ScanSearch, Image, BadgeCheck, AlertCircle, FileCheck, Database, BarChart3, ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
